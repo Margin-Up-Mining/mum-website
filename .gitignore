@@ -1,0 +1,5 @@
+*.class
+.idea
+target/
+gs-script.*
+.env*
