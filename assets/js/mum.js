@@ -20,6 +20,8 @@ languages = {
     en: english
 }
 
+var SELECTED_LANGUAGE = 'en';
+
 function setLanguage(lang) {
 
     Object.keys(languages[lang]).forEach(key => {
@@ -36,6 +38,31 @@ function setInnerTextInElements(className, text) {
         el.item(i).innerHTML = text;
     }
 
+}
+
+function doSubmit() {
+    
+    // var scriptUrl = "https://script.google.com/macros/s/AKfycbzCb8s-mzIFGUGSiTlowyjFvkAABNcFXQg5fZ3CceXQtTc_opIB/exec";
+    var formData = {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      message: document.getElementById('message').value
+    };
+
+    console.log('submit!' + JSON.stringify(formData));
+  
+    // $.ajax({
+    //   type: "POST",
+    //   url: scriptUrl,
+    //   data: formData,
+    //   crossDomain: true,
+    //   error: function(data) {
+    //     setThanksButton();
+    //   },
+    //   success: function(data){
+    //     setThanksButton();
+    //   }
+    // });
 }
 
 setLanguage('en');
